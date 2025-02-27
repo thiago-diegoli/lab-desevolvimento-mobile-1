@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import Storage from "@react-native-async-storage/async-storage";
 
-export default function ListaRegistros(){
+export default function ListaRegistros() {
   const [registros, setRegistros] = useState([]);
 
   useEffect(() => {
@@ -20,6 +20,17 @@ export default function ListaRegistros(){
     carregarRegistros();
   }, []);
 
+  const salvarRegistro = async (qtd, produto, valor) => {
+    try {
+      const novoRegistro = { qtd, produto, valor };
+      const registrosAtualizados = [...registros, novoRegistro];
+      setRegistros(registrosAtualizados);
+      await Storage.setItem("registros", JSON.stringify(registrosAtualizados));
+    } catch (error) {
+      console.error("Erro ao salvar o registro", error);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Lista de Registros</Text>
@@ -36,7 +47,7 @@ export default function ListaRegistros(){
       />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -53,5 +64,3 @@ const styles = StyleSheet.create({
     borderBottomColor: "#ccc",
   },
 });
-
-

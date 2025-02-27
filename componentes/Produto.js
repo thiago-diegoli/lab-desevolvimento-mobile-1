@@ -59,15 +59,12 @@ export default function Produto({ onSalvarDados }) {
           keyboardType="numeric"
         />
       </View>
-      <Text style={styles.label}>Quantidade:</Text>
-      <Text style={styles.label}>Produto:</Text>
-      <Text style={styles.label}>Valor:</Text>
       <View style={styles.inputRow}>
-        <View style={[styles.botao, { margin: 10 }]}>
-          <Button title="Limpar" onPress={limparCampos} />
+        <View style={styles.botao}>
+          <Button title="Limpar" onPress={limparCampos} color="#FF6347" />
         </View>
         <View style={styles.botao}>
-          <Button title="Salvar" onPress={handleSalvar} />
+          <Button title="Salvar" onPress={handleSalvar} color="#32CD32" />
         </View>
       </View>
     </View>
@@ -77,32 +74,32 @@ export default function Produto({ onSalvarDados }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFF",
-    alignItems: "flex-end",
-    padding: 25,
+    backgroundColor: "#F5F5F5",
+    alignItems: "center",
+    padding: 20,
   },
   inputRow: {
     flexDirection: "row",
-    marginBottom: 10,
+    marginBottom: 15,
     width: "100%",
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   input: {
     borderWidth: 1,
     borderColor: "#CCC",
     padding: 10,
-    width: "80%",
-    marginBottom: -10,
-    marginLeft: 5,
+    width: "70%",
     borderRadius: 5,
-    marginTop: 15,
+    backgroundColor: "#FFF",
   },
   label: {
     fontSize: 16,
     fontWeight: "bold",
-    marginTop: 20,
+    color: "#333",
   },
   botao: {
+    width: "40%",
     marginTop: 20,
   },
 });
