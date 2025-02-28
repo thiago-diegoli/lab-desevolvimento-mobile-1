@@ -39,9 +39,9 @@ export default function ListaRegistros() {
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <View style={styles.item}>
-            <Text>Quantidade: {item.qtd}</Text>
-            <Text>Produto: {item.produto}</Text>
-            <Text>Preço: R$ {item.valor}</Text>
+            <Text style={styles.itemText}>Quantidade: {item.qtd}</Text>
+            <Text style={styles.itemText}>Produto: {item.produto}</Text>
+            <Text style={styles.itemText}>Preço: R$ {item.valor}</Text>
           </View>
         )}
       />
@@ -51,16 +51,30 @@ export default function ListaRegistros() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: "#F5F5F5",
     padding: 20,
   },
   titulo: {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginBottom: 20,
+    color: "#333",
+    textAlign: "center",
   },
   item: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ccc",
+    backgroundColor: "#FFF",
+    padding: 15,
+    borderRadius: 8,
+    marginBottom: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  itemText: {
+    fontSize: 16,
+    color: "#333",
   },
 });

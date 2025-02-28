@@ -1,11 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import AsyncStorage from './componentes/AsyncStorage'
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import AsyncStorage from "./componentes/AsyncStorage";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.cabecalho}>Armazenamento local</Text>
+      <Text style={styles.cabecalho}>Armazenamento Local</Text>
       <AsyncStorage />
       <StatusBar style="auto" />
     </View>
@@ -15,13 +15,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#f0f0f0",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
   },
   cabecalho: {
-    marginTop: '100',
-    fontSize: 20,
-    fontStyle: 'italic'
-  }
+    marginTop: 50,
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#333",
+    marginBottom: 20,
+  },
 });
